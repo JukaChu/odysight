@@ -1,0 +1,80 @@
+$main-font: "Poppins", sans-serif;
+$second-font: "Halogen", sans-serif;
+
+
+$main-color: #593DD2;
+$purplelow: #9D95E8;
+$border: #B18BFF;
+$white: #fff;
+$black: #000;
+$size: 18px;
+
+@mixin flexStart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexCenterH {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin flexCenterV {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin rtl-margin($property, $ltrproperty, $value, $value2) {
+  margin-#{$property}: $value;
+  margin-#{$ltrproperty}: $value2;
+
+  [dir=rtl] & {
+    margin-#{$ltrproperty}: $value;
+    margin-#{$property}: $value2;
+  }
+}
+
+@mixin rtl-padding($property, $ltrproperty, $value, $value2) {
+  padding-#{$property}: $value;
+  padding-#{$ltrproperty}: $value2;
+
+  [dir=rtl] & {
+    padding-#{$ltrproperty}: $value;
+    padding-#{$property}: $value2;
+  }
+}
+
+@mixin textAlign($property, $property2) {
+  text-align: $property;
+
+  [dir=rtl] & {
+    text-align: $property2;
+  }
+}
+
+//fonts
+
+@mixin defaultFont {
+  font-style: normal;
+  font-weight: 700;
+  font-size: $size;
+  line-height: 1.66;
+  color: #FFFFFF;
+}
+
+@mixin textFont {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  color: $black;
+}
