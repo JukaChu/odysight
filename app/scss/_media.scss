@@ -2,7 +2,33 @@
   @return ($px-vw * 100vw) / $base-vw
 }
 
+@media screen and (max-width: 1900px) {
+  .system-arch__bot-step .text p {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 1750px) {
+  .single-unit.single-unit--sensors .unit-line.unit-line--1 .line {
+    width: 2000%;
+  }
+  .single-unit.single-unit--sensors .unit-line.unit-line--1::after {
+    left: -2000%;
+  }
+  .single-unit.single-unit--sensors .unit-line.unit-line--2 .line {
+    width: 1650%;
+
+
+  }
+  .single-unit.single-unit--sensors .unit-line.unit-line--2::after {
+    left: -1650%;
+  }
+  .system-arch__bot-step .text p {
+    font-size: 16px;
+  }
+  .sheets-content {
+    padding: 40px 34px 40px 40px;
+  }
   .header {
     width: 450px;
 
@@ -22,6 +48,9 @@
   }
   .content-top {
     padding: 33px 34px 0 40px;
+  }
+  .system-arch {
+    padding: 30px 34px 50px 40px;
   }
   .cases-list {
     gap: 6px 30px;
@@ -44,6 +73,13 @@
 }
 
 @media screen and (max-width: 1650px) {
+  .system-arch__bot-step .text .ic {
+    width: 90px;
+    height: 90px;
+  }
+  .system-arch__bot-step {
+    height: 200px;
+  }
   .menu ul li a {
     padding-top: 21px;
     padding-bottom: 21px;
@@ -51,9 +87,34 @@
 }
 
 @media screen and (max-width: 1440px) {
+  .sheets-content {
+    padding: 25px;
+  }
+  .sheet-tabs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .sheet-tabs__tabs {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .sheet-tabs__btns {
+    width: 100%;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    .tab-btn {
+      width: auto;
+      padding: 15px;
+    }
+  }
   .slider-btn {
     width: 35px;
     height: 35px;
+
     &::after {
       width: 16px;
       height: 16px;
@@ -69,12 +130,14 @@
   .single-dot {
     height: 5px;
     width: 22px;
+
     &.active {
       width: 90px;
     }
   }
   .video-slider__wrapper .slider-btn {
     left: 5px;
+
     &.slider-btn--next {
       right: 5px;
     }
@@ -83,9 +146,11 @@
   .play-btn {
     width: 85px;
     height: 85px;
+
     img {
       width: 35px;
     }
+
     &::after {
       width: 30px;
       height: 54px;
@@ -144,6 +209,10 @@
     padding: 25px;
     margin-bottom: 0;
   }
+  .system-arch {
+    padding: 25px 25px 40px;
+    max-height: calc(100vh - 90px);
+  }
   .cases {
     padding: 15px 25px 0 25px;
     max-height: calc(100vh - 90px);
@@ -169,6 +238,7 @@
     padding: 15px 0;
   }
 }
+
 @media screen and (max-width: 1100px) {
   .single-case {
     width: calc(50% - 10px);
