@@ -1,7 +1,8 @@
 .header {
   width: 489px;
   height: 100%;
-  background: $main-color;
+  background: linear-gradient(188.38deg, #593DD2 3.13%, #2E1F6C 94.56%);
+
 
 
   .container {
@@ -24,7 +25,7 @@
     display: flex;
 
 
-    background: $main-color;
+    //background: $main-color;
     z-index: 2;
 
     a, img {
