@@ -150,6 +150,10 @@
   }
 }
 
+.sheets-content {
+  max-height: calc(100vh - 133px);
+}
+
 .cases {
   width: 100%;
 
@@ -513,6 +517,8 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 
