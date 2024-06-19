@@ -55,7 +55,7 @@ function scrollAnimationsStage() {
                 }
 
             })
-        }, {threshold: .5})
+        }, {threshold: .5});
 
         animStage.forEach((animate, k) => {
             observer.observe(animate);
@@ -74,7 +74,7 @@ function scrollAnimations() {
     if (anim.length) {
         var observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
-                var el = entry.target
+                var el = entry.target;
                 if (entry.isIntersecting) {
                     if (el.classList.contains('anim-js')) {
 
@@ -179,6 +179,7 @@ function startVideoSlider() {
                 },
                 autoplay: false,
                 spaceBetween: 0,
+
 
                 pagination: {
                     el: pagin,
