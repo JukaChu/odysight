@@ -29,6 +29,23 @@
   .sheets-content {
     padding: 40px 34px 40px 40px;
   }
+  .login-block {
+    width: 500px;
+    padding: 90px 45px;
+  }
+  .login-block__wrapper .logo {
+    top: 30px;
+    left: 45px;
+  }
+  .big-wrapper .copyr {
+    padding: 0 45px 30px;
+  }
+
+  .login-block__wrapper {
+    .logo {
+      width: 320px;
+    }
+  }
   .header {
     width: 450px;
 
@@ -162,6 +179,42 @@
   .header-container {
     padding-top: 23px;
   }
+
+  .login-block {
+    width: 420px;
+    padding: 70px 25px;
+  }
+  .login-block__wrapper .logo {
+    top: 20px;
+    left: 25px;
+  }
+  .hero-cont {
+    padding: 40px;
+  }
+  .hero-txt h1, .hero-txt span {
+    font-size: 28px;
+  }
+  .hero-txt p {
+    font-size: 22px;
+  }
+  .input-wrap input {
+    padding: 18px 20px 19px;
+  }
+  .form-block > span {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    padding: 15px 20px;
+  }
+  .big-wrapper .copyr {
+    padding: 0 25px 20px;
+  }
+  .login-block__wrapper {
+    .logo {
+      width: 250px;
+    }
+  }
   .header .logo {
     width: 250px;
   }
@@ -245,5 +298,81 @@
 @media screen and (max-width: 1100px) {
   .single-case {
     width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main-wrapper {
+    height: auto;
+  }
+  .big-wrapper {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .login-block {
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .login-block__wrapper {
+    padding: 57px 23px 35px;
+    width: 100%;
+    justify-content: flex-start;
+
+    .logo {
+      width: 250px;
+      position: static;
+      margin-bottom: 69px;
+    }
+  }
+  .form-block {
+    > span {
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+
+    > p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .form {
+      max-width: 400px;
+    }
+  }
+
+  .input-wrap {
+    input {
+      padding: 15px 38px 16px;
+      font-size: 16px;
+    }
+  }
+  .btn {
+    font-size: 16px;
+    padding: 20px;
+  }
+  .hero {
+    width: 100%;
+  }
+  .hero-cont {
+    padding: 33px 25px 206px;
+  }
+  .hero-txt {
+    h1, span {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+  .big-wrapper .copyr {
+    padding: 0 25px 28px;
+  }
+  .redsocks {
+    background: red;
   }
 }
