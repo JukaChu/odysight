@@ -1166,7 +1166,6 @@
   justify-content: center;
 
 
-
   .logo {
     width: 350px;
     display: flex;
@@ -1389,5 +1388,129 @@
     font-size: 24px;
     line-height: 150%;
     color: #FFFFFF;
+  }
+}
+
+.logged-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+body {
+  &.logged {
+    .header {
+      display: none;
+    }
+  }
+}
+
+.logged-head {
+  width: 100%;
+  background: linear-gradient(188.38deg, #4B009B 3.13%, #29329C 94.56%);
+  padding: 30px 21px 30px 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    width: 350px;
+    height: auto;
+    display: flex;
+
+    a, img {
+      display: flex;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.logged-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+
+  p {
+    position: relative;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    color: #FFFFFF;
+
+
+    &::after {
+      width: 1px;
+      height: 56px;
+      background: #fff;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  span {
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    color: #FFFFFF;
+
+  }
+}
+
+.logged-block {
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+
+.logged-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  appearance: none;
+  background: url("../img/bg-logged.jpg") no-repeat center bottom / 100% 100%;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    content: '';
+    background: #593DD2;
+    opacity: 0.3;
+    mix-blend-mode: color;
+  }
+
+  .heli {
+    position: absolute;
+    display: flex;
+    width: 94%;
+    top: 14%;
+    left: 2.2%;
+    z-index: 3;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
