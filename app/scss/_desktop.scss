@@ -539,12 +539,19 @@
       display: flex;
     }
 
-    iframe {
+    .iframe-wrap {
       width: 100%;
       height: 100%;
+
       position: absolute;
       top: 0;
       left: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+
     }
   }
 }
@@ -678,6 +685,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    display: flex;
 
     img {
       width: 100%;
@@ -1474,6 +1482,10 @@ body {
   width: 100%;
   flex-grow: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logged-bg {
@@ -1485,7 +1497,7 @@ body {
   overflow: hidden;
   backface-visibility: hidden;
   appearance: none;
-  background: url("../img/bg-logged.jpg") no-repeat center bottom / 100% 100%;
+  background: url("../img/bg-logged.jpg") no-repeat center bottom / cover;
 
   &::after {
     position: absolute;
@@ -1513,4 +1525,111 @@ body {
       height: auto;
     }
   }
+}
+
+.logged-menu {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px 40px 169px;
+  gap: 25px;
+  position: relative;
+  z-index: 4;
+  margin-top: auto;
+}
+
+
+.menu-item-log {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 104px;
+  border: 3px solid $main-color;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+
+  &::after {
+    width: 106%;
+    padding-top: 106%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    content: '';
+    position: absolute;
+    background: url("../img/scopeic.svg") no-repeat center / 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .cont-item {
+    width: 100%;
+    height: 100%;
+    padding: 17px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 2;
+
+    .ic {
+      width: auto;
+      height: 30px;
+      display: flex;
+
+      img {
+        width: auto;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    p {
+      font-family: $second-font;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1;
+      text-align: center;
+
+      color: #000000;
+      transition: all 0.3s ease-in-out;
+
+
+    }
+  }
+
+  &:hover {
+    background: $main-color;
+
+    &::after {
+      filter: brightness(0);
+    }
+
+    .cont-item {
+      .ic {
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.logged-textual {
+  display: none;
+}
+
+.mobile-btn {
+  display: none;
 }

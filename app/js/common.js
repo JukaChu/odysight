@@ -503,6 +503,7 @@ $('body').on('click', '.play-btn', function (e) {
 // videoControlSlides();
 
 let tabBtn = [...document.querySelectorAll('.tab-btn')];
+let mobBtn = [...document.querySelectorAll('.mobile-btn')];
 
 
 function changeTab() {
@@ -521,6 +522,30 @@ function changeTab() {
                     });
                     btn.classList.add('active');
                     [...btn.closest('.tabs-owner').querySelectorAll('.item-tab')].forEach((tab, m) => {
+                        if (m === k) {
+                            tab.classList.add('active');
+
+                        } else {
+                            tab.classList.remove('active');
+
+                        }
+                    });
+
+                }
+            })
+        });
+        mobBtn.forEach((btn, k) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (btn.closest('.item-tab').classList.contains('active')) {
+
+                } else {
+                    mobBtn.forEach((btn2) => {
+                        btn2.closest('.item-tab').classList.remove('active');
+                    });
+                    btn.closest('.item-tab').classList.add('active');
+                    [...btn.closest('.tabs-owner').querySelectorAll('.tab-btn')].forEach((tab, m) => {
                         if (m === k) {
                             tab.classList.add('active');
 
