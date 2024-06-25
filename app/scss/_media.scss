@@ -150,7 +150,7 @@
     }
   }
   .video-slider .dots {
-    bottom: 25px;
+    bottom: 88px;
   }
   .dots {
     gap: 8px;
@@ -185,7 +185,7 @@
     }
   }
   .video-slider__wrapper {
-    max-height: calc(100vh - 230px);
+    max-height: calc(100vh - 230px + 63px);
   }
   .header-container {
     padding-top: 23px;
@@ -378,9 +378,30 @@
     padding: 0 25px 40px;
   }
   .video-slider__wrapper {
-    height: 500px;
+    height: auto;
     max-height: none;
     margin-bottom: 40px;
+    padding-bottom: 0;
+
+    .swiper-slide {
+      > p {
+        margin-top: 40px;
+        position: static;
+      }
+    }
+
+    .single-video {
+      height: 500px;
+    }
+  }
+  .video-slider__wrapper .swiper-wrapper .swiper-slide>p {
+    margin-top: 40px;
+    position: static;
+    transform: none;
+  }
+  .video-slider .dots {
+    top: 470px;
+    bottom: auto;
   }
 
   .video-slider {
@@ -663,6 +684,11 @@
 }
 
 @media screen and (max-width: 767px) {
+  .video-slider__wrapper .slider-btn {
+    top: 250px;
+    bottom: auto;
+    margin-top: 0;
+  }
   .single-unit .unit-text p {
     font-size: 12px;
   }
@@ -702,7 +728,19 @@
   .content-icon {
     margin-right: 14px;
   }
+  .video-slider__wrapper {
+    .swiper-slide {
+      > p {
+        max-width: 240px;
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  .video-slider__wrapper .swiper-wrapper .swiper-slide>p {
 
+  }
   .content-top {
     padding: 20px 23px;
   }
@@ -770,9 +808,11 @@
       align-items: center;
       justify-content: flex-start;
       gap: 30px;
+
       p {
         text-align: left;
       }
+
       .ic {
         flex-shrink: 0;
         margin: 0;
@@ -787,6 +827,7 @@
       padding-bottom: 43px;
 
     }
+
     &:last-child {
       height: 75px;
       mask-image: url("../img/mask-last.svg");
@@ -931,7 +972,16 @@
     }
   }
   .video-slider__wrapper {
-    height: 396px;
+    height: auto;
+    .dots {
+      top: 366px;
+    }
+    .single-video {
+      height: 396px;
+    }
+  }
+  .video-slider__wrapper .slider-btn {
+    top: 198px;
   }
   .single-case {
     width: 100%;

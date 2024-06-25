@@ -340,7 +340,7 @@
   .dots {
     z-index: 10;
     position: absolute;
-    bottom: 30px;
+    bottom: 90px;
     left: 50%;
     width: 100%;
     transform: translate(-50%, 0);
@@ -349,16 +349,20 @@
 
 .video-slider__wrapper {
   width: 100%;
-  margin-bottom: 39px;
+  margin-bottom: 0;
   position: relative;
   flex-grow: 1;
-  max-height: calc(100vh - 273px);
+  max-height: calc(100vh - 273px + 63px);
+  padding-bottom: 63px;
+  overflow: hidden;
+
 
   .slider-btn {
     position: absolute;
     top: 50%;
     left: 40px;
     transform: translate(0, -50%);
+    margin-top: -31px;
     z-index: 10;
 
     &.slider-btn--next {
@@ -370,15 +374,29 @@
   .swiper {
     width: 100%;
     height: 100%;
+    overflow: visible;
   }
 
   .swiper-wrapper {
     width: 100%;
     height: 100%;
+    overflow: visible;
 
     .swiper-slide {
       width: 100%;
       height: 100%;
+      position: relative;
+      > p {
+        position: absolute;
+        top: calc(100% + 63px);
+        left: 50%;
+        transform: translate(-50%, -100%);
+
+
+        width: 100%;
+        @include textFont;
+        text-align: center;
+      }
     }
   }
 }
