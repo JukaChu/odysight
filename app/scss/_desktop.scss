@@ -1516,6 +1516,23 @@ body {
   backface-visibility: hidden;
   appearance: none;
   background: url("../img/bg-logged.jpg") no-repeat center bottom / cover;
+  &.logged-bg--image {
+    background: rgba(255, 255, 255, 0);
+    .heli {
+      display: none;
+    }
+    .image {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &::after {
+      opacity: 0.6;
+    }
+  }
 
   &::after {
     position: absolute;
