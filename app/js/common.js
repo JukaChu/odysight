@@ -366,18 +366,22 @@ controlModal();
 //video controls
 
 var player3;
-
-function createVideo(videoBlockId, videoId, btn) {
+let timeYt = 0;
+function createVideo(videoBlockId, videoId, btn, time) {
+    console.log(time);
     player3 = new YT.Player(videoBlockId, {
         videoId: videoId,
+        start: time,
         playerVars: {
             // 'autoplay':1,
+            'start': time,
             'autohide': 1,
             'showinfo': 0,
             'rel': 0,
             'loop': 1,
             'playsinline': 1,
             'fs': 1,
+
             'allowsInlineMediaPlayback': true
         },
         events: {
@@ -425,10 +429,12 @@ function createVideo(videoBlockId, videoId, btn) {
 let botSlides = [...document.querySelectorAll('.play-btn')];
 var player2;
 
+
 $('body').on('click', '.play-btn', function (e) {
     let btn = this;
     let type = btn.dataset.videoType;
     let id = btn.dataset.videoId;
+    let videoTimeStart = Number(btn.dataset.time);
     let videoCont = btn.closest('.section-media');
 
     videoCont.dataset.videoType = type;
@@ -449,10 +455,15 @@ $('body').on('click', '.play-btn', function (e) {
 
 
         if (btn.classList.contains('pause')) {
+            player2.getCurrentTime().then(function(seconds) {
+                // console.log(seconds);
+                btn.dataset.time = Math.trunc(seconds);
+            });
             player2.pause();
             btn.classList.remove('pause');
             btn.closest('.section-media').classList.remove('hide-poster');
         } else {
+            player2.setCurrentTime(videoTimeStart);
             player2.play();
             btn.classList.add('pause');
             btn.closest('.section-media').classList.add('hide-poster');
@@ -465,9 +476,11 @@ $('body').on('click', '.play-btn', function (e) {
     } else {
         if (type === 'video') {
             if (btn.classList.contains('pause')) {
+                btn.dataset.time = $(btn).closest('.section-media').find('.video-box video')[0].currentTime;
                 $(btn).closest('.section-media').find('.video-box .video').html('');
                 btn.classList.remove('pause');
                 btn.closest('.section-media').classList.remove('hide-poster');
+
             } else {
                 let videoBl = document.createElement('video');
                 videoBl.src = id;
@@ -479,7 +492,10 @@ $('body').on('click', '.play-btn', function (e) {
                 btn.closest('.section-media').classList.add('hide-poster');
 
                 $(btn).closest('.section-media').find('.video-box .video').append(videoBl);
+                console.log(videoTimeStart);
+                $(btn).closest('.section-media').find('.video-box video')[0].currentTime = videoTimeStart;
                 $(btn).closest('.section-media').find('.video-box video')[0].play();
+
             }
 
 
@@ -488,9 +504,10 @@ $('body').on('click', '.play-btn', function (e) {
                 $(btn).closest('.section-media').find('.video-box .video').html('');
                 btn.classList.remove('pause');
                 btn.closest('.section-media').classList.remove('hide-poster');
+                btn.dataset.time = Math.trunc(player3.getCurrentTime());
             } else {
                 $(btn).closest('.section-media').find('.video-box .video').append('<div class="video-iframe" id="' + videoId + '"></div>');
-                createVideo(videoId, videoId, btn);
+                createVideo(videoId, videoId, btn, videoTimeStart);
                 btn.classList.add('pause');
                 btn.closest('.section-media').classList.add('hide-poster');
             }
