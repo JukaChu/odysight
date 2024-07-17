@@ -103,6 +103,7 @@
   .title {
     flex-shrink: 0;
     order: 2;
+    text-transform: uppercase;
   }
 
   &-icon {
@@ -241,10 +242,12 @@
       transform: translate(50%, -50%) rotate(45deg);
     }
 
+
     &::after {
       bottom: 0;
       left: 0;
       transform: translate(-50%, 50%) rotate(45deg);
+      content: none;
     }
 
     .img {
